@@ -13,9 +13,10 @@ const Nav = () => {
           <ul className="hidden items-center gap-6 text-sm text-gray-600 md:flex">
             <li className="cursor-pointer text-pink-600">Home</li>
             <li className="cursor-pointer ">Technologies</li>
+            <li className="cursor-pointer ">Projects</li>
             <li className="cursor-pointer ">About</li>
             <li className="cursor-pointer ">Contact</li>
-            <li className="cursor-pointer ">Projects</li>
+            
           </ul>
         </div>
 

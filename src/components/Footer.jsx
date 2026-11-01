@@ -1,6 +1,7 @@
 
 const Footer = () => {
   return (
+    <>
     <footer className="border-t border-gray-100 px-6 py-10">
       <div className="grid grid-cols-4 gap-10">
 
@@ -57,7 +58,9 @@ const Footer = () => {
         </ul>
       </div>
     </footer>
+    </>
   );
 };
+
 
 export default Footer;

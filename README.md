@@ -51,3 +51,5 @@ Conditional rendering means showing UI based on a condition. I used it in the Yo
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 We pass data using props. A child can send information back by calling a function received from its parent. I used addstack and setaddstack to manage the selected technologies.
+
+Live Site: https://steady-cranachan-eb76a3.netlify.app/

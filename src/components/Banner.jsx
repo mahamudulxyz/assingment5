@@ -1,6 +1,7 @@
+
 const Banner = () => {
   return (
-    <div className="flex items-center justify-between gap-10 px-6 py-14">
+    <div className="mx-auto flex max-w-6xl items-center justify-between gap-10 px-6 py-6">
       <div className="w-1/2">
         <h1 className="text-5xl font-bold leading-tight text-gray-900">
           Build Your Ideal
@@ -38,4 +39,4 @@ const Banner = () => {
   );
 };
 
-export default Banner; 
+export default Banner;

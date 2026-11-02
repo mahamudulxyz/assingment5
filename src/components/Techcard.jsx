@@ -1,61 +1,61 @@
-
 import { Star } from "lucide-react";
 
-const Techcard = ({ tachnology }) => {
+const Techcard = ({ tachnology, addstack, hanslebutton }) => {
+  const alreadyAdded = addstack.some(
+    (item) => item.id === tachnology.id
+  );
+
   return (
-    <section className="px-5 py-12">
-      
-        <div className="grid-cols-3 flex flex-col rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-md ">
+    <div className="flex flex-col rounded-xl border border-gray-100 bg-white p-3 shadow-sm transition hover:shadow-md">
+      <div className="flex items-start justify-between">
+        <img
+          src={tachnology.iconImage}
+          alt={tachnology.name}
+          className="h-8 w-8 object-contain"
+        />
 
-          <div className="flex items-start justify-between">
-            <div>
-              <img
-                src={tachnology.iconImage}
-                alt={tachnology.name}
-                className="h-9 w-9 object-contain"
-              />
-            </div>
-
-            <div className="rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-500">
-              <h3>{tachnology.badge}</h3>
-            </div>
-          </div>
-
-          <div className="mt-5">
-            <h2 className="text-lg font-bold text-gray-900">
-              {tachnology.name}
-            </h2>
-
-            <p className="mt-2 text-sm leading-5 text-gray-500">
-              {tachnology.description}
-            </p>
-          </div>
-
-          <div className="mt-5 flex items-center justify-between border-t border-gray-100 pt-3">
-            <h2 className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-600">
-              {tachnology.category}
-            </h2>
-
-            <p className="text-xs text-gray-500">
-              {tachnology.level}
-            </p>
-
-            <div className="flex items-center gap-1 text-sm font-semibold text-gray-700">
-              <Star
-                size={15}
-                className="fill-amber-400 text-amber-400"
-              />
-              <p>{tachnology.rating}</p>
-            </div>
-          </div>
-
-          <button className="mt-4 w-full rounded-lg bg-gray-950 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800">
-            Add to Stack
-          </button>
-
+        <div className="rounded-full bg-sky-50 px-2 py-1 text-xs font-medium text-sky-500">
+          {tachnology.badge}
         </div>
-      
-    </section>
+      </div>
+
+      <div className="mt-3">
+        <h2 className="text-base font-bold text-gray-900">
+          {tachnology.name}
+        </h2>
+
+        <p className="mt-2 min-h-12 text-xs leading-5 text-gray-500">
+          {tachnology.description}
+        </p>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3">
+        <h2 className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-600">
+          {tachnology.category}
+        </h2>
+
+        <p className="text-xs text-gray-500">
+          {tachnology.level}
+        </p>
+
+        <div className="flex items-center gap-1 text-xs font-semibold text-gray-700">
+          <Star size={12} className="fill-amber-400 text-amber-400" />
+          {tachnology.rating}
+        </div>
+      </div>
+
+      <button
+        onClick={() => hanslebutton(tachnology)}
+        disabled={alreadyAdded}
+        className={`mt-3 w-full rounded-lg py-2 text-xs font-medium transition ${
+          alreadyAdded
+            ? "cursor-not-allowed border border-pink-200 bg-pink-50 text-pink-600"
+            : "bg-gray-950 text-white hover:bg-gray-800"
+        }`}
+      >
+        {alreadyAdded ? "Added to Stack" : "Add to Stack"}
+      </button>
+    </div>
   );
 };
 

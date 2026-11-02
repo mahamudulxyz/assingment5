@@ -1,32 +1,23 @@
 import { X } from "lucide-react";
-import { Bounce, toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const YourStack = ({ addstack, setaddstack }) => {
-
   const hanleDeleteIcon = (item) => {
-    setaddstack(addstack.filter((tech) => tech.id !== item.id));
+    setaddstack((previousStack) =>
+      previousStack.filter((tech) => tech.id !== item.id)
+    );
 
-    toast.error(`${item.name} removed`, {
-      position: "top-center",
-      transition: Bounce,
-    });
+    toast.error(`${item.name} removed`);
   };
 
   const handleallremoved = () => {
     setaddstack([]);
-
-    toast.error("All items removed", {
-      position: "top-center",
-      transition: Bounce,
-    });
+    toast.error("All items removed");
   };
 
   return (
     <div className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
-
-      <h2 className="text-sm font-bold text-gray-900">
-        Your Stack
-      </h2>
+      <h2 className="text-sm font-bold text-gray-900">Your Stack</h2>
 
       <p className="mt-1 text-xs text-gray-500">
         {addstack.length} technologies selected
@@ -65,7 +56,10 @@ const YourStack = ({ addstack, setaddstack }) => {
                 </div>
 
                 <button onClick={() => hanleDeleteIcon(item)}>
-                  <X size={15} className="text-gray-400 hover:text-red-500" />
+                  <X
+                    size={15}
+                    className="text-gray-400 hover:text-red-500"
+                  />
                 </button>
               </li>
             ))}
@@ -79,7 +73,6 @@ const YourStack = ({ addstack, setaddstack }) => {
           </button>
         </>
       )}
-
     </div>
   );
 };

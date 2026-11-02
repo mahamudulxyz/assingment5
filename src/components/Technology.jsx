@@ -10,6 +10,7 @@ const Technology = ({ dataPromise }) => {
   return (
     <>
       <TechnologyHeading />
+      
     <div  className="grid grid-cols-3 gap-3">
       
       {data.map((item) => (

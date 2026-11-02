@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
 import Technology from "./components/Technology";
 import { Suspense, useState } from "react";
+import Loading from "./components/Loading";
 
 const dataPromise = async () => {
   const res = await fetch("/data/technology.json");
@@ -21,7 +22,7 @@ function App() {
       <Nav></Nav>
       <Banner></Banner>
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading/>}>
         <Technology
           dataPromise={technologyPromise}
           addstack={addstack}

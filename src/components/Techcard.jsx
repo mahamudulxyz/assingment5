@@ -4,23 +4,8 @@ import { Star } from "lucide-react";
 const Techcard = ({ tachnology }) => {
   return (
     <section className="px-5 py-12">
-
-      {/* Heading */}
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Explore the <span className="text-fuchsia-500">Technologies</span>
-        </h2>
-
-        <p className="mt-2 text-sm text-gray-500">
-          Pick one technology per category to build your ideal stack.
-        </p>
-      </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-3 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-
-        {/* Technology Card */}
-        <div className=" flex flex-col rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-md ">
+      
+        <div className="grid-cols-3 flex flex-col rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-md ">
 
           <div className="flex items-start justify-between">
             <div>
@@ -69,7 +54,7 @@ const Techcard = ({ tachnology }) => {
           </button>
 
         </div>
-      </div>
+      
     </section>
   );
 };

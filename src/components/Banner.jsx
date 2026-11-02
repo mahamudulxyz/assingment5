@@ -1,4 +1,6 @@
 
+import bannerImage from "../assets/banner-stack.png";
+
 const Banner = () => {
   return (
     <div className="mx-auto flex max-w-6xl items-center justify-between gap-10 px-6 py-6">
@@ -30,7 +32,7 @@ const Banner = () => {
 
       <div className="w-1/2">
         <img
-          src="/src/assets/banner-stack.png"
+          src={bannerImage}
           alt="Development Stack"
           className="ml-auto w-full max-w-md"
         />
